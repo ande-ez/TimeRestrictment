@@ -9,8 +9,8 @@ TimeRestrictment::setDBConnection($DB);
 
 // Restrictment parameters
 $signature 	= $_SERVER['REMOTE_ADDR'];
-$type 		= TimeRestrictment::someAction;
-$timeout 	= 5;
+$type 			= TimeRestrictment::someAction;
+$timeout 		= 5;
 
 
 // Check if restricted

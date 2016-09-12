@@ -83,10 +83,10 @@ class TimeRestrictment {
 		$endTime = $regTime + $timeout;
 
 		// Bind the values
-		$statement->bindParam(':type', $type);
+		$statement->bindParam(':type', 			$type);
 		$statement->bindParam(':signature', $signature);
-		$statement->bindParam(':regTime', $regTime);
-		$statement->bindParam(':endTime', $endTime);
+		$statement->bindParam(':regTime', 	$regTime);
+		$statement->bindParam(':endTime', 	$endTime);
 
 		// Execute the query
 		$statement->execute();
@@ -98,11 +98,11 @@ class TimeRestrictment {
 	 * Removes a restriction on a action
 	 *
 	 */
-	public static function unRestrict($type, $identifier) {
+	public static function unRestrict($type, $signature) {
 		$DBInterface = self::getDBConnection();
 
 		$statement = $DBInterface->prepare('DELETE FROM TimeRestrictment WHERE type=:type AND signature=:signature');
-		$statement->bindParam(':type', 		$type);
+		$statement->bindParam(':type', 			$type);
 		$statement->bindParam(':signature', $signature);
 		$statement->execute();
 	}
